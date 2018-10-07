@@ -18,7 +18,6 @@ public class MainActivity extends AppCompatActivity {
         Button swimming = (Button) findViewById(R.id.swimming);
         Button cycling = (Button) findViewById(R.id.cycling);
 
-        Button add = (Button) findViewById(R.id.add);
         Button diary = (Button) findViewById(R.id.diary);
 
         diary.setOnClickListener(new View.OnClickListener() {
@@ -27,6 +26,31 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, Diary.class));
             }
         });
+        walking.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, Walking.class));
+            }
+        });
+        jogging.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, Jogging.class));
+            }
+        });
+        cycling.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, Cycling.class));
+            }
+        });
+        swimming.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, Swimming.class));
+            }
+        });
+
 
 
 

@@ -3,17 +3,41 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent" >
 
-    <RelativeLayout
+    <LinearLayout
+        android:id="@+id/mLlayoutBottomButtons"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_above="@+id/mLlayoutBottomButtons" >
-    </RelativeLayout>
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        >
+
+    <LinearLayout
+        android:id="@+id/test"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:gravity="center"
+            android:text="Cloud Fit"
+            android:textColor="@android:color/black"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"/>
+    </LinearLayout>
 
     <Button
         android:id="@+id/walking"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Walking"
+        android:layout_below="@+id/textView"
         />
 
     <Button
@@ -45,18 +69,12 @@
         />
 
     <LinearLayout
-        android:id="@+id/mLlayoutBottomButtons"
+        android:id="@+id/mLlayoutBottomButtosfdns"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="fill_parent"
         android:layout_alignParentBottom="true"
+        android:gravity="bottom"
         android:orientation="horizontal" >
-
-        <Button
-            android:id="@+id/add"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Add"></Button>
 
         <Button
             android:id="@+id/diary"
@@ -64,6 +82,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Diary"></Button>
+    </LinearLayout>
+
     </LinearLayout>
 
 </RelativeLayout>

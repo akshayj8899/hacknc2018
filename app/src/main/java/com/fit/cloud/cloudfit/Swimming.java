@@ -6,13 +6,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class Walking extends AppCompatActivity {
+public class Swimming extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_walking);
-
+        setContentView(R.layout.activity_swimming);
         Button add = (Button) findViewById(R.id.add);
         Button cancel = (Button) findViewById(R.id.cancel);
 
@@ -26,10 +25,8 @@ public class Walking extends AppCompatActivity {
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Walking.this, MainActivity.class));
+                startActivity(new Intent(Swimming.this, MainActivity.class));
             }
         });
-
-
     }
 }

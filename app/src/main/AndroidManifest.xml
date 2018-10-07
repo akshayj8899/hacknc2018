@@ -19,7 +19,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".Diary" />
-        <activity android:name=".Walking"></activity>
+        <activity android:name=".Walking" />
+        <activity android:name=".Listview" />
+        <activity android:name=".Jogging" />
+        <activity android:name=".Swimming" />
+        <activity android:name=".Cycling"></activity>
     </application>
 
 </manifest>

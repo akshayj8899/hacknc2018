@@ -3,6 +3,7 @@ package com.fit.cloud.cloudfit;
 import android.content.Intent;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void createWorkout(final String username, final int weight, final int time, final int distance, final Workout work,
-                                  final Function<Boolean, Boolean> callback) {
+                                  final Consumer<Boolean> callback) {
         RequestQueue queue = Volley.newRequestQueue(this);
         String url = "https://silicon-alchemy-218616.appspot.com/db";
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
@@ -41,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
                    @RequiresApi(api = Build.VERSION_CODES.N)
                    @Override
                     public void onResponse(String response) {
-                       callback.apply(response.equals("true"));
+                       callback.accept(response.equals("true"));
                     }
                 }, new Response.ErrorListener() {
             @Override
@@ -74,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 workout.put("username", username);
                 workout.put("time", time);
-                workout.put("activity", work.toString());
+                workout.put("activity", work.name());
                 workout.put("calories", (int) (weight * calorieFactor));
                 workout.put("distance", distance);
 
@@ -85,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
                 return params;
             }
         };
+        queue.add(stringRequest);
     }
 
     @Override
@@ -107,7 +109,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+        add.setOnClickListener(new View.OnClickListener(){
+            @RequiresApi(api = Build.VERSION_CODES.N)
+            @Override
+            public void onClick(View v) {
+                Log.e("ERRO", "IN ON CLICK");
+                createWorkout("aksja6", 115, 120, 20, Workout.JOGGING, new Consumer<Boolean>() {
+                    @Override
+                    public void accept(Boolean success) {
+                        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                        builder.setMessage(success ? "Succeeded" : "Failed");
+                        builder.create().show();
+                    };
+                });
+            }
+        });
 
 
     }

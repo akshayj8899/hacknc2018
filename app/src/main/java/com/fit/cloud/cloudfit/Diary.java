@@ -52,13 +52,15 @@ public class Diary extends AppCompatActivity {
                                 JSONObject uniObject = mainObject.getJSONObject("aksja6");
                                 String firstname = uniObject.getString("firstname");
                                 String lastname = uniObject.getString("lastname");
-                                String weight = uniObject.getString("lastname");
+                                String weight = uniObject.getString("weight");
                                 String height = uniObject.getString("height");
                                 JSONObject workouts = uniObject.getJSONObject("workouts");
+
                                 
 
                                 //JSONObject jObject = (JSONObject) parser.parse(response);
-                                mTextView.setText(aJsonString);
+                                mTextView.setText("First Name: " + firstname + "\nLast Name: " + lastname + "\nWeight: " + weight + "\nHeight: " + height + "\n");
+
                                 //mTextView.setText(aJsonString);
                             }
                             catch(Exception e)

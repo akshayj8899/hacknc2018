@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/mLlayoutBottomButtons" >
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/walking"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Walking"
+        />
+
+    <Button
+        android:id="@+id/jogging"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/walking"
+        android:layout_marginTop="8dp"
+        android:text="Jogging"
+        />
+
+
+    <Button
+        android:id="@+id/cycling"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Cycling"
+        android:layout_below="@+id/jogging"
+        />
+
+    <Button
+        android:id="@+id/swimming"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Swimming"
+        android:layout_below="@+id/cycling"
+        />
+
+    <LinearLayout
+        android:id="@+id/mLlayoutBottomButtons"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Add"></Button>
+
+        <Button
+            android:id="@+id/diary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Diary"></Button>
+    </LinearLayout>
+
+</RelativeLayout>
